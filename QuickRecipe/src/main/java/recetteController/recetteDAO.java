@@ -182,21 +182,35 @@ public class recetteDAO {
         return null;
     }
     public boolean updateRecipe(long id, String title, String ingredients, String instructions, String imageName) {
-        String sql = "UPDATE quickrecipe SET titre = ?, ingredients = ?, instructions = ?, image_name = ? WHERE id = ?";
-        try (Connection connection = SingleConnexion.getConnection(); 
-             PreparedStatement statement = connection.prepareStatement(sql)) {
-            statement.setString(1, title);
-            statement.setString(2, ingredients);
-            statement.setString(3, instructions);
-            statement.setString(4, imageName);
-            statement.setLong(5, id);
+        String sql;
+    	if (imageName != null && !imageName.isEmpty()) {
+    	    sql = "UPDATE quickrecipe SET titre = ?, ingredients = ?, instructions = ?, image_name = ? WHERE id = ?";
+    	} else {
+    	    sql = "UPDATE quickrecipe SET titre = ?, ingredients = ?, instructions = ? WHERE id = ?";
+    	}
 
-            statement.executeUpdate();
-            int affectedRows = statement.executeUpdate();
-              return affectedRows > 0;
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return false;
+    	try (Connection connection = SingleConnexion.getConnection();
+    	     PreparedStatement statement = connection.prepareStatement(sql)) {
+
+    	    statement.setString(1, title);
+    	    statement.setString(2, ingredients);
+    	    statement.setString(3, instructions);
+
+    	    if (imageName != null) {
+    	        statement.setString(4, imageName);
+    	        statement.setLong(5, id);
+    	    } else {
+    	        statement.setLong(4, id);
+    	    }
+
+    	    int affectedRows = statement.executeUpdate();
+    	    return affectedRows > 0;
+    	} catch (SQLException e) {
+    	    e.printStackTrace();
+    	    return false;
+    	    // Gestion des erreurs de base de données
+    	
+
             // Gestion des erreurs de base de données
         }
     }
