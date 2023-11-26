@@ -1,0 +1,75 @@
+@charset "UTF-8";
+.recipe-details-content {
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    flex-basis: 20%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre horizontalement */
+    justify-content: center; /* Centre verticalement */
+    width: 1000px;
+    height: auto;
+}
+
+.recipe-details-content .recipe-details-header {
+    width: 500px;
+    height: 220px;
+    display: block;
+}
+.recipe-details-content .recipe-details-header img {
+    width:500px;
+    height: 220px;
+    display: block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 1px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+
+.recipe-details-content h2  {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: none;
+    text-decoration: underline;
+}
+
+.like-dislike-section {
+    display: flex;
+    align-items: center; /* Aligne les éléments verticalement au centre */
+}
+
+.like-dislike-buttons {
+    display: flex;
+    position : relative ;
+    margin-top:20px;
+    gap: 10px; /* Ajoute un espace de 10 pixels entre les boutons */
+}
+
+.icon-button {
+	margin-top:5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.txt {
+    margin-top: 50px;
+    text-align: center; /* Centrer horizontalement le contenu de la classe .txt */
+}
+
+.txt h3 {
+    margin-left: 250px;
+    margin-bottom: 40px;
+    width: 500px;
+    text-align: center; /* Centrer horizontalement le texte */
+}
+
+.txt p {
+    margin-top: 10px;
+    margin-bottom: 40px;
+}

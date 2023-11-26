@@ -1,0 +1,114 @@
+@charset "UTF-8";
+@charset "UTF-8";
+.resultat {
+    position: absolute;
+    top: 75%;
+    margin-left: -50px;
+    width: 100%;
+    height: auto;
+    text-align: left;
+    margin-top: auto; 
+    z-index: 10;
+}
+
+.recipe-gallery2 {
+	display: grid;
+    grid-template-columns: auto auto;
+	
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 15px;
+    gap: 30px;
+    z-index: 10;
+}
+
+.recipe-card2 {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 1px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    width: 180px;
+    height:120px;
+    margin-left: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Aligner verticalement les éléments enfants */
+    position: relative; /* Ajouter une position relative */
+}
+
+.recipe-card2:hover {
+    transform: scale(1.05); /* Ajustez la valeur selon vos besoins pour agrandir légèrement la carte au survol */
+}
+
+.recipe-card2:hover .recipe-image img {
+    transform: scale(1.05); /* Ajustez la valeur selon vos besoins pour agrandir légèrement l'image au survol de la carte */
+}
+
+.recipe-card2 img {
+    width: 180px;
+    height:120px;
+}
+
+.recipe-details {
+    margin-left: -400px;
+}
+
+.recipe-title {
+    font-weight: bold; /* Mettre le titre en gras */
+    text-decoration: underline; /* Souligner le titre */
+    margin-top: -5px;
+}
+
+.recipe-overview {
+    margin: auto; /* Centrer l'aperçu verticalement */
+    margin-top: 20px; /* Ajouter un espacement entre l'aperçu et le bouton */    
+    margin-left: 10px;
+}
+
+.consult-button {
+    margin-bottom:0px; 
+    margin-top: 20px;
+    transition: transform 0.1s ease;
+}
+
+.consult-button:hover {
+    transform: scale(1.05);
+}
+
+.error-msg {
+    color: gray;
+    font-weight: bold;
+    margin-top:-7%;
+     margin-left: 570px;
+     align-items: center;
+    
+}
+.error-msg1 {
+    color: gray;
+    font-weight: bold;
+     margin-top:-2%;
+     margin-left: 570px;
+     align-items: center;
+    
+}
+.error-msg2 {
+    color: gray;
+    font-weight: bold;
+     margin-top:-9%;
+     margin-left: 520px;
+     align-items: center;
+    
+}
+
+.no-input-message img {
+	max-width: 350px;
+    margin-bottom: -100px;
+    margin-top: -250px;
+    margin-left: 500px;
+}
+.no-results-message img{
+	max-width: 350px;
+    margin-bottom: -100px;
+    margin-top: -180px;
+    margin-left: 500px;
+}
