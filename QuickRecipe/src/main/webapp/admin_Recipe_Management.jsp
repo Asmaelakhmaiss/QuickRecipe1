@@ -130,7 +130,7 @@
                 </td>
             <td>
                 
-                <a href="edition.jsp?id=<%= recette.getId() %>" class="btn01">Edit</a>
+                <a href="edit.jsp?id=<%= recette.getId() %>" class="btn01">Edit</a>
             </td>
                 
             </tr>
