@@ -60,7 +60,7 @@ public class EditServlet extends HttpServlet {
     } 
     
     File file = new File(IMAGE_DIR+image_name);
-    if (file.exists() && !file.isDirectory()) {
+     if (file.exists() && !file.isDirectory()&& fileName!=null && !fileName.isEmpty()) {
          file.delete();}
     recetteDAO dao2 = new recetteDAO();
     boolean success= dao2.updateRecipe(id, recipeTitle,ingredients,instructions, fileName );
