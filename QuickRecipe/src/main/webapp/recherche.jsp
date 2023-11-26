@@ -29,7 +29,7 @@
 
 <%! 
     private String truncateIngredients(String ingredients) {
-        int maxLength = 100; // Définissez la longueur maximale que vous souhaitez afficher
+        int maxLength = 100; // DÃ©finissez la longueur maximale que vous souhaitez afficher
         if (ingredients.length() > maxLength) {
             return ingredients.substring(0, maxLength) + "...";
         } else {
@@ -44,9 +44,9 @@
     <meta charset="UTF-8">
     <title>Search results</title>
     <link rel="stylesheet" href="accueil1.css">
-    <link rel="stylesheet" href="userhome1.css"> <!-- Utilisez la même feuille de style que la page d'accueil -->
+    <link rel="stylesheet" href="userhome1.css"> <!-- Utilisez la mÃªme feuille de style que la page d'accueil -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <link rel="stylesheet" href="recherche1.css"> <!-- Nouvelle feuille de style pour les résultats de recherche -->
+    <link rel="stylesheet" href="recherche1.css"> <!-- Nouvelle feuille de style pour les rÃ©sultats de recherche -->
 </head>
 
 <body>
@@ -81,8 +81,8 @@
             <a href="add_recipe.jsp" class="btn-accueil">ADD A RECIPE</a>
         <div class="dropdown">
         <button class="dropbtn">
-            <i class="fa fa-user"></i> <!-- Icône d'utilisateur -->
-            <i class="fa fa-chevron-down"></i> <!-- Icône de flèche vers le bas -->
+            <i class="fa fa-user"></i> <!-- IcÃ´ne d'utilisateur -->
+            <i class="fa fa-chevron-down"></i> <!-- IcÃ´ne de flÃ¨che vers le bas -->
         </button>
         <div class="dropdown-content">
             
@@ -121,7 +121,7 @@
                     <img src="Images/error-image.png" alt="Error">
                     <p class="error-msg2">Check the spelling or try another search.</p>
                 </div>
-            <% } else if (critereRecherche == null){ %>
+            <% } else if (critereRecherche == null || critereRecherche.isEmpty()){ %>
                 <!-- Display error message for no input -->
                 <div class="no-input-message">
                     <img src="Images/error-image.png" alt="Error">
@@ -150,7 +150,7 @@ function toggleDropdown() {
         dropdownContent.style.display = "block";
     }
 }
-// Fermer le menu déroulant si l'utilisateur clique en dehors de celui-ci
+// Fermer le menu dÃ©roulant si l'utilisateur clique en dehors de celui-ci
 window.onclick = function(event) {
     if (!event.target.matches('.dropbtn')) {
         var dropdowns = document.getElementsByClassName("dropdown-content");
